@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  birth_year: MyString
+  gender: MyString
+  species: one
+  planet: one
+
+two:
+  name: MyString
+  birth_year: MyString
+  gender: MyString
+  species: two
+  planet: two
