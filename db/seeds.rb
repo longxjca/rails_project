@@ -30,6 +30,10 @@ Person.destroy_all
 Species.destroy_all
 Planet.destroy_all
 Film.destroy_all
+
+# 1st AND 2nd DATASET from keggles.com
+# csv file and Fakers are used to create Person, Species, and Planet tables
+
 # geting full path of the csv file, root is where the project is
 filename_planets = Rails.root.join("db/planets.csv")
 filename_species = Rails.root.join("db/species.csv")
@@ -57,7 +61,7 @@ end
 
 plantes_have_species = Planet.all.sample(10)
 plantes_have_species.each do |planet|
-  species = Species.all.sample(5)
+  species = Species.all.sample(6)
   species.each do |specie|
     Person.create(name:       Faker::Movies::StarWars.unique.character,
                   birth_year: Faker::Date.birthday(min_age: 16, max_age: 210),
@@ -66,5 +70,47 @@ plantes_have_species.each do |planet|
                   planet:     planet)
   end
 end
+# 3 rd dataset from star war api using JSON is used to creat film tables
+require "open-uri"
+require "json"
+# fetch and decode JSON resources from the Star Wars API
+def swapi_fetch(url)
+  JSON.parse(open(url).read)
+end
 
-puts "Created #{Planet.count} planets and #{Species.count} speciesa and Created People #{Person.count}"
+def film_url(id)
+  "https://swapi.dev/api/films/#{id}/"
+end
+
+film_ids = 1..6
+film_ids.each do |film_id|
+  film = swapi_fetch(film_url(film_id))
+  Film.create(title:        film["title"],
+              director:     film["director"],
+              release_date: film["release_date"])
+end
+# create joint table for film and person
+films_with_people = Film.all
+films_with_people.each do |film|
+  people = Person.all.sample(42)
+  people.each do |person|
+    PersonFilm.create(person: person, film: film)
+  end
+end
+# create joint tables for film and planets
+films_with_planets = Film.all
+films_with_planets.each do |film|
+  planets = Planet.all.sample(18)
+  planets.each do |planet|
+    FilmPlanet.create(planet: planet, film: film)
+  end
+end
+
+# starwar_characters.each do |person|
+#   planet = Planet.find_or_create_by(name: person["homeworld"])
+#   specie = Species.find_or_create_by(species: person["species"])
+#   character = Person.create
+# end
+
+puts "Created #{Planet.count} planets, #{Species.count} species, #{Film.count} Films, and   #{Person.count} People"
+puts "Created Jointed tables rows : PersonFilm: #{PersonFilm.count}, FilmPlanet: #{FilmPlanet.count}"
