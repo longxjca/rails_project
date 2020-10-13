@@ -75,7 +75,7 @@ require "open-uri"
 require "json"
 # fetch and decode JSON resources from the Star Wars API
 def swapi_fetch(url)
-  JSON.parse(open(url).read)
+  JSON.parse(URI.open(url).read)
 end
 
 def film_url(id)
@@ -112,5 +112,5 @@ end
 #   character = Person.create
 # end
 
-puts "Created #{Planet.count} planets, #{Species.count} species, #{Film.count} Films, and   #{Person.count} People"
-puts "Created Jointed tables rows : PersonFilm: #{PersonFilm.count}, FilmPlanet: #{FilmPlanet.count}"
+puts "Created #{Planet.count} planets, #{Species.count} species, #{Film.count} Films, and #{Person.count} People"
+puts "Created Joint tables rows : PersonFilm: #{PersonFilm.count}, FilmPlanet: #{FilmPlanet.count}"
