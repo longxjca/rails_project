@@ -1,2 +1,44 @@
-<h1>Planets#show</h1>
-<p>Find me in app/views/planets/show.html.erb</p>
+
+<h2> Planet Name: <%= @planet.name %> belongs category <%= link_to "Planets", planets_path%></h2>
+<h3>There are <%= @planet.people.count %> people from this planet</h3>
+  <ul>
+    <% @planet.people.each do |person| %>
+      <li>
+        <%= link_to person.name, person%>
+      </li>
+    <% end %>
+  </ul>
+<h3>There are <%= @planet.species.count %> species from this planet</h3>
+
+ <ul>
+    <% @planet.species.each do |specie| %>
+      <li>
+         <%= link_to specie.name, specie %>
+      </li>
+    <% end %>
+  </ul>
+<p>
+
+
+
+</p>
+
+<h3>Films</h3>
+<% if @planet.films.empty? %>
+  <p><%= @planet.name%> has never been a film.</p>
+<% else %>
+  <p>Here are the films <%= @planet.name%> appeard:</p>
+  <ul>
+    <% @planet.films.each do |film| %>
+      <li>
+        <%= link_to film.title, film%>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+
+
+
+

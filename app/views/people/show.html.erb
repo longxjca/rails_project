@@ -1,2 +1,23 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<h2>Person Name: <%= @person.name %> belongs category <%= link_to "People", people_path%></h2>
+<p>
+  This person belongs to planet <%=link_to @person.planet.name, @person.planet%> <br>
+  Species is <%=link_to @person.species.name, @person.species%> <br>
+  Birth year is <%= @person.birth_year%> <br>
+  Gender is <%= @person.gender%>
+
+</p>
+
+<h3>Films</h3>
+<% if @person.films.empty? %>
+  <p><%= @person.name%> has never been a film.</p>
+<% else %>
+  <p>Here are the films <%= @person.name%> was in:</p>
+  <ul>
+    <% @person.films.each do |film| %>
+      <li>
+        <%= link_to film.title, film%>
+      </li>
+    <% end %>
+  </ul>
+
+<% end %>

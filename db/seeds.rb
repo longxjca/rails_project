@@ -59,9 +59,9 @@ starwar_species.each do |specie|
                             language:       specie["language"])
 end
 
-plantes_have_species = Planet.all.sample(10)
+plantes_have_species = Planet.all.sample(50)
 plantes_have_species.each do |planet|
-  species = Species.all.sample(6)
+  species = Species.all.sample(1)
   species.each do |specie|
     Person.create(name:       Faker::Movies::StarWars.unique.character,
                   birth_year: Faker::Date.birthday(min_age: 16, max_age: 210),

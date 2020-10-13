@@ -1,2 +1,19 @@
-<h1>Films#show</h1>
-<p>Find me in app/views/films/show.html.erb</p>
+<h2> Filim Name: <%= @film.title %> </h2>
+<h3>There are <%= @film.people.count %> people in this film belongs category <%= link_to "Films", films_path%></h3>
+  <ul>
+    <% @film.people.each do |person| %>
+      <li>
+        <%= link_to person.name, person_path(person) %>
+      </li>
+    <% end %>
+  </ul>
+<h3>There are <%= @film.planets.count %> planest in this film</h3>
+
+ <ul>
+    <% @film.planets.each do |planet| %>
+      <li>
+         <%= link_to planet.name, planet_path(planet) %>
+      </li>
+    <% end %>
+  </ul>
+<p>

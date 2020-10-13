@@ -1,0 +1,12 @@
+<% if @species.empty?%>
+  <p>There are no species available</p>
+<% else %>
+  <h2>There are <%= @species.count%> species in the star war films</h2>
+
+  <% @species.each do |specie| %>
+    <li>
+      <%= link_to specie.name, specie_path(specie) %>
+    </li>
+
+  <% end %>
+<% end %>

@@ -10,6 +10,16 @@
   </head>
 
   <body>
+   <h1>Star War Films</h1>
+    <p>
+        <%= link_to 'Home', root_path %> |
+        <%= link_to 'People', people_path%> |
+        <%= link_to 'Species', species_path%> |
+        <%= link_to 'Planets', planets_path%> |
+        <%= link_to 'Films', films_path%> |
+
+
+    </p>
     <%= yield %>
   </body>
 </html>
