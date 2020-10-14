@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   # get 'people/index'
   # get 'people/show'
   # get 'films/index'
