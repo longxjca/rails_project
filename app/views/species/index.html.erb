@@ -4,9 +4,12 @@
   <h2 class="title is-2">There are <%= @species.count%> species in the star war films</h2>
 
   <% @species.each do |specie| %>
-    <li>
-      <%= link_to specie.name, specie_path(specie) %>
-    </li>
+    <ul>
+      <li>
+        <%= link_to specie.name, specie_path(specie) %>
+      </li>
+    </ul>
+
 
   <% end %>
 <% end %>

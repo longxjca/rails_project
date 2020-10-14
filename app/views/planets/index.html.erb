@@ -4,9 +4,13 @@
   <h2 class="title is-2">There are <%= @planets.count%> planets in the star war films</h2>
 
   <% @planets.each do |planet| %>
+  <ul>
     <li>
       <%= link_to planet.name, planet %>
     </li>
+
+  </ul>
+
 
   <% end %>
 <% end %>

@@ -4,10 +4,13 @@
   <h2 class="title is-2">There are <%= @people.count%> people in the star war films</h2>
 
   <% @people.each do |person| %>
-    <li>
-      <%=link_to person.name, person %>  from  Planet
-      <%=link_to person.planet.name, person.planet%> Specise is
-      <%=link_to person.species.name, person.species%>
-    </li>
+    <ul>
+      <li>
+        <%=link_to person.name, person %>  from  Planet
+        <%=link_to person.planet.name, person.planet%> Specise is
+        <%=link_to person.species.name, person.species%>
+      </li>
+    </ul>
+
   <% end %>
 <% end %>

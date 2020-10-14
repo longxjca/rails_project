@@ -4,9 +4,12 @@
   <h2 class="title is-2">There are <%= @films.count%> films of star war films</h2>
 
   <% @films.each do |film| %>
-    <li>
+  <ul>
+   <li>
       <%= link_to film.title, film_path(film) %>
     </li>
+  </ul>
+
 
   <% end %>
 <% end %>
