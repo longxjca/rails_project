@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
   # get 'people/index'
   # get 'people/show'
   # get 'films/index'
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   # get 'species/index'
   # get 'species/show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root to: "people#index"
+  root to: "home#index"
   get "people", to: "people#index"
   get "people/:id", to: "people#show", id: /\d+/, as: "person"
 
@@ -21,5 +20,4 @@ Rails.application.routes.draw do
 
   get "films", to: "films#index"
   get "films/:id", to: "films#show", id: /\d+/, as: "film"
-
 end

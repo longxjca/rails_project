@@ -1,2 +1,50 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="columns">
+  <div class="column">
+    <h2 class="title is-2">Films</h2>
+        <ul>
+      <% @films.each do |film|%>
+        <li>
+            <%= link_to film.title, film_path(film)%>
+        </li>
+        <% end %>
+
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2 class="title is-2">People</h2>
+    <ul>
+      <% @people.each do |person|%>
+        <li>
+            <%= link_to person.name, person_path(person)%>
+        </li>
+        <% end %>
+
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2 class="title is-2">Planets</h2>
+     <ul>
+      <% @planets.each do |planet|%>
+        <li>
+            <%= link_to planet.name, planet_path(planet)%>
+        </li>
+        <% end %>
+
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2 class="title is-2">Species</h2>
+       <ul>
+      <% @species.each do |specie|%>
+        <li>
+            <%= link_to specie.name, specie_path(specie)%>
+        </li>
+        <% end %>
+
+    </ul>
+  </div>
+
+</div>
