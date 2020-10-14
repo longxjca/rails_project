@@ -1,4 +1,4 @@
-<h2> Species Name: <%= @specie.name %> belongs category <%= link_to "Species", species_path%></h2>
+<h2 class="title is-2"> Species Name: <%= @specie.name %> belongs category <%= link_to "Species", species_path%></h2>
 <h3>Species Details:</h3>
 <p>
   The language of this specie is <%= @specie.language%> <br>
@@ -6,7 +6,7 @@
 
 
 </p>
-<h3>There are <%= @specie.people.count %> people from this specie</h3>
+<h3 class="title is-3">There are <%= @specie.people.count %> people from this specie</h3>
   <ul>
     <% @specie.people.each do |person| %>
       <li>
@@ -14,7 +14,7 @@
       </li>
     <% end %>
   </ul>
-<h3>There are <%= @specie.planets.count %> planets have this specie</h3>
+<h3 class="title is-3">There are <%= @specie.planets.count %> planets have this specie</h3>
 
  <ul>
     <% @specie.planets.each do |planet| %>

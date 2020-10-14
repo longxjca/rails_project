@@ -1,5 +1,12 @@
-<h2> Filim Name: <%= @film.title %> </h2>
-<h3>There are <%= @film.people.count %> people in this film belongs category <%= link_to "Films", films_path%></h3>
+<h2 class="title is-2"> Filim Name: <%= @film.title %> belongs category <%= link_to "Films", films_path%></h2>
+<h3>Film Details:</h3>
+<p>
+  The director of this film is <%= @film.director%> <br>
+  The release date of this film is <%= @film.release_date%> <br>
+
+
+</p>
+<h3 class="title is-3">There are <%= @film.people.count %> people in this film </h3>
   <ul>
     <% @film.people.each do |person| %>
       <li>
@@ -7,7 +14,7 @@
       </li>
     <% end %>
   </ul>
-<h3>There are <%= @film.planets.count %> planest in this film</h3>
+<h3 class="title is-3">There are <%= @film.planets.count %> planest in this film</h3>
 
  <ul>
     <% @film.planets.each do |planet| %>

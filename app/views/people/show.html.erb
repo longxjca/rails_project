@@ -1,4 +1,4 @@
-<h2>Person Name: <%= @person.name %> belongs category <%= link_to "People", people_path%></h2>
+<h2 class="title is-2">Person Name: <%= @person.name %> belongs category <%= link_to "People", people_path%></h2>
 <p>
   This person belongs to planet <%=link_to @person.planet.name, @person.planet%> <br>
   Species is <%=link_to @person.species.name, @person.species%> <br>
@@ -7,7 +7,7 @@
 
 </p>
 
-<h3>Films</h3>
+<h3 class="title is-3">Films</h3>
 <% if @person.films.empty? %>
   <p><%= @person.name%> has never been a film.</p>
 <% else %>

@@ -1,7 +1,7 @@
 <% if @people.empty? %>
   <p>There are no people available</p>
 <% else %>
-  <h2>There are <%= @people.count%> people in the star war films</h2>
+  <h2 class="title is-2">There are <%= @people.count%> people in the star war films</h2>
 
   <% @people.each do |person| %>
     <li>
