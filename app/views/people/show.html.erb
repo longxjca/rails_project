@@ -1,9 +1,9 @@
 <h2 class="title is-2">Person Name: <%= @person.name %> belongs category <%= link_to "People", people_path%></h2>
 <p>
-  This person belongs to planet <%=link_to @person.planet.name, @person.planet%> <br>
-  Species is <%=link_to @person.species.name, @person.species%> <br>
-  Birth year is <%= @person.birth_year%> <br>
-  Gender is <%= @person.gender%>
+  <strong>This person belongs to planet</strong>  <%=link_to @person.planet.name, @person.planet%> <br>
+   <strong>Species is</strong>  <%=link_to @person.species.name, @person.species%> <br>
+   <strong>Birth year is</strong>  <%= @person.birth_year%> <br>
+   <strong>Gender is</strong>  <%= @person.gender%>
 
 </p>
 
