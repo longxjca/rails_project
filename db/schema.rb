@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_061624) do
+ActiveRecord::Schema.define(version: 2020_10_14_031819) do
 
   create_table "film_planets", force: :cascade do |t|
     t.integer "planet_id", null: false
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 2020_10_08_061624) do
     t.string "title"
     t.string "director"
     t.string "release_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "permalink"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -31,6 +31,19 @@ Species.destroy_all
 Planet.destroy_all
 Film.destroy_all
 
+Page.destroy_all
+
+Page.create(
+  title:     "About the Data",
+  content:   "The data is from Kaggle dataset about Star Wars films",
+  permalink: "about_the_data"
+)
+Page.create(
+  title:     "Contact Us",
+  content:   "please feel free to send me email at ljin38@academic.rrc.ca",
+  permalink: "contact"
+)
+
 # 1st AND 2nd DATASET from keggles.com
 # csv file and Fakers are used to create Person, Species, and Planet tables
 
