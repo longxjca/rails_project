@@ -1,0 +1,42 @@
+<p class="mb-5"> found <%= pluralize(@people.count, 'people')%> when searching for: <%= params[:keywords]%></p>
+<ul>
+  <% @people.each do |person|%>
+    <li>
+      <%= link_to person.name, person%>
+
+    </li>
+  <% end %>
+</ul>
+<p class="mb-5"> found <%= pluralize(@species.count, 'species')%> when searching for: <%= params[:keywords]%></p>
+<ul>
+  <% @species.each do |specie|%>
+    <li>
+      <%= link_to specie.name, specie_path(specie)%>
+
+    </li>
+  <% end %>
+
+
+</ul>
+<p class="mb-5"> found <%= pluralize(@planets.count, 'planets')%> when searching for: <%= params[:keywords]%></p>
+<ul>
+  <% @planets.each do |planet|%>
+    <li>
+      <%= link_to planet.name, planet_path(planet)%>
+
+    </li>
+  <% end %>
+
+
+</ul>
+<p class="mb-5"> found <%= pluralize(@films.count, 'films')%> when searching for: <%= params[:keywords]%></p>
+<ul>
+  <% @films.each do |film|%>
+    <li>
+      <%= link_to film.title, film_path(film)%>
+
+    </li>
+  <% end %>
+
+
+</ul>

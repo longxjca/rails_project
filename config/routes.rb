@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   # get 'species/show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: "home#index"
-  get "people", to: "people#index"
-  get "people/:id", to: "people#show", id: /\d+/, as: "person"
+  resources :home, only: %i[index] do
+    collection do
+      get "search"
+    end
+  end
+  # get "people", to: "people#index"
+  # get "people/:id", to: "people#show", id: /\d+/, as: "person"
+  resources :people, only: %i[index show]
 
   get "species", to: "species#index"
   get "species/:id", to: "species#show", id: /\d+/, as: "specie"
